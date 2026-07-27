@@ -39,10 +39,14 @@ One active match at a time. A member is either available to be matched or locked
 
 ## 2. Current state
 
-- A two page PDF flyer exists and is the source of brand and copy. It should live in the repo at `assets/brand/Simply_Arranged.pdf`
-- Sign ups currently go through a form behind `bit.ly/simplyarranged`. The fields on that form are the starting schema for the member profile and need exporting before phase 2
+Updated 27 July 2026. The running log of what changed and why is in `docs/decisions.md`.
+
+- A two page PDF flyer exists and is the source of brand and copy. It lives in the repo at `assets/brand/Simply_Arranged.pdf`
+- Sign ups go through a Microsoft Form at `forms.office.com/r/pAn3746bN1`, which is where `bit.ly/simplyarranged` points. All 40 fields are now recorded in `docs/form-schema.md`
 - Everything after the form is manual: calls, matching, meetings, follow ups
-- There is no website yet. Phase 1 replaces the bit.ly link with a proper domain
+- The website exists but is not deployed. All six pages are built. Several carry visible todo blocks marking things the client still has to answer
+- The client has decided to keep the Microsoft Form for now rather than build an enquiry form. The join page puts an explicit consent gate in front of it. See `docs/consent.md`
+- `simplyarranged.co.uk` is registered on IONOS and currently forwards to the form. Repointing it is deliberately parked
 
 ---
 
@@ -457,33 +461,61 @@ M1 and M2 are the current job. Everything after that waits on the answers in sec
 
 ## 19. Still open with the client
 
+Numbering never changes, because other documents refer to these by number. Answered items keep their number and get their answer written underneath.
+
 Blocking phase 2, not phase 1:
 
-1. Who is the middleman in practice: an employed matchmaker, the founder himself, or the woman's wali nominated at signup. This decides whether a wali portal is needed
-2. Do members get a yes or no on a proposed profile before it locks, or does the matchmaker pair people outright. The flyer implies the former, the earlier conversation assumed it, so it needs confirming
-3. Photos: visible on the proposed profile, released only after both agree, or never in app
-4. What happens after the six months if no match has succeeded
-5. Does a second match inside the six months cost another £35
-6. Are profiles verified by a human before going live, and what proof is required
-7. Who owns the code, the domain and the Firebase account
+1. **Open.** Who is the middleman in practice: an employed matchmaker, the founder himself, or the woman's wali nominated at signup. This decides whether a wali portal is needed
+   - Partial. The form collects a parent or guardian's name, number and relationship, plus a confirmation that at least one of them has been told. All optional. That records who the guardian is, it does not make them a participant
+2. **Open.** Do members get a yes or no on a proposed profile before it locks, or does the matchmaker pair people outright. The flyer implies the former, the earlier conversation assumed it, so it needs confirming
+3. **Open.** Photos: visible on the proposed profile, released only after both agree, or never in app
+4. **Answered, 27 July 2026.** What happens after the six months if no match has succeeded
+   - Another £35 for the next six months. The fee is a recurring subscription, not a one off
+5. **Mostly answered, 27 July 2026.** Does a second match inside the six months cost another £35
+   - The fee is tied to a six month period rather than to a match, so a second match inside that window should already be covered. Stated that way on `process.html` and flagged there as needing confirmation
+   - This confirms the schema call in section 15. Track payments against a period, not a match
+6. **Open.** Are profiles verified by a human before going live, and what proof is required
+7. **Open.** Who owns the code, the domain and the Firebase account
+   - The repo is `github.com/mozaid9/SimplyArranged`, private. The domain is registered on IONOS. No Firebase project exists yet
 
 Blocking phase 1:
 
-8. Domain. Confirm and buy. The name is Simply Arranged with a d, so check `simplyarranged.co.uk` and `.com` before anything is printed again
-9. Does the mufti video exist yet
-10. About us content: real names, photos and the founding story
-11. Export of the current bit.ly form so its fields feed the profile schema
-12. Company details for the footer: registered name, number, contact email
+8. **Answered, 27 July 2026.** Domain. Confirm and buy
+   - `simplyarranged.co.uk` was already registered and already forwarding to the form. Nothing to buy. `simplyarranged.com` is not owned and sits parked on Afternic
+   - The client has parked anything to do with going live, so the DNS repoint is not scheduled
+9. **Open.** Does the mufti video exist yet
+   - The home page has a placeholder card so the layout is settled. The embed drops straight in
+10. **Open.** About us content: real names, photos and the founding story
+    - The about page is built and the founding story is drafted from the flyer. The team section is still an empty placeholder and is the last thing missing from phase 1. Deferred by the client
+11. **Answered, 27 July 2026.** Export of the current bit.ly form so its fields feed the profile schema
+    - All 40 fields, types, required flags and choice lists are in `docs/form-schema.md`, along with what the phase 2 model is missing and what it has that the form does not collect
+12. **Partly answered, 27 July 2026.** Company details for the footer: registered name, number, contact email
+    - Contact email is `simplyarranged@hotmail.com` and it is used across the site, in both legal pages and as the address for data requests. Registered name, company number and a postal address are still needed, and the privacy policy and terms cannot be published without them
+
+New since this document was written:
+
+13. **Open.** The consent problem. The form collects religion, school of thought, prayer practice, ethnicity and disability behind a single "I accept the T&C" tickbox pointing at terms that were never published. A consent gate now sits in front of the form, but a static page cannot record consent. The fix is three consent questions inside the form itself and the exact wording is in `docs/consent.md`
+14. **Open.** ICO registration, roughly £52 a year. Section 16 already calls for it and nothing has been done
+15. **Open.** Data retention period. How long an exited member's data is kept. The privacy policy cannot be published without it
+16. **Open.** Refund position on the £35
+17. **Open.** Minimum age. The service is for adults looking to marry, the draft terms say 18, and the form asks for an age but sets no minimum
+18. **Open.** Whether the Microsoft account holding the form is in the UK or EU region, and whether responses leave the UK. If they do, the transfer basis needs stating in the privacy policy
 
 ---
 
 ## 20. Definition of done for phase 1
 
-- Five pages live on the real domain over HTTPS
-- Brand matches the flyer closely enough that they read as one thing
-- Enquiry form writes to Firestore, emails the team and confirms to the user
-- Consent checkbox in place, privacy policy and terms published
-- Lighthouse 90 plus on performance and accessibility
-- Works from 320px to desktop
-- 404 page, favicon, social share image
-- The bit.ly link points at the new site
+Status as at 27 July 2026.
+
+| Done | Item | Where it stands |
+|---|---|---|
+| Partly | Five pages live on the real domain over HTTPS | Six pages built. Not deployed, and the domain is parked by the client |
+| Yes | Brand matches the flyer closely enough that they read as one thing | Colours and both typefaces sampled from the flyer, artwork extracted from it |
+| Changed | Enquiry form writes to Firestore, emails the team and confirms to the user | Superseded. The client has kept the Microsoft Form, embedded behind a consent gate on the join page |
+| Partly | Consent checkbox in place, privacy policy and terms published | Consent gate built. Both legal pages drafted but neither is fit to publish. Items 12 to 18 above are what is blocking them |
+| Yes | Lighthouse 90 plus on performance and accessibility | Accessibility, best practices and SEO all 100 on every page. CLS peaks at 0.07 on join, inside the good threshold |
+| Yes | Works from 320px to desktop | No horizontal scroll at 320, 375, 768 or 1280 |
+| Yes | 404 page, favicon, social share image | All three built from the flyer artwork |
+| No | The bit.ly link points at the new site | Parked with the rest of the launch work |
+
+What is genuinely left is content and decisions rather than code. The team section on the about page, and the answers to items 12 to 18.
