@@ -232,6 +232,157 @@
   max-width: var(--sa-measure);
 }
 
+/* Consent ----------------------------------------------------------------- */
+
+.consent {
+  background-color: var(--sa-white);
+  border-radius: var(--sa-radius);
+  box-shadow: var(--sa-shadow);
+  margin-inline: auto;
+  max-width: var(--sa-measure);
+  padding: var(--sa-space-5);
+  text-align: start;
+}
+
+.consent > * + * {
+  margin-block-start: var(--sa-space-4);
+}
+
+.consent > h2 + *,
+.consent > h3 + * {
+  margin-block-start: var(--sa-space-2);
+}
+
+.consent > * + h3 {
+  margin-block-start: var(--sa-space-5);
+}
+
+.consent-item {
+  align-items: start;
+  display: grid;
+  gap: var(--sa-space-3);
+  grid-template-columns: auto 1fr;
+}
+
+/* 24px is the smallest a tickbox should ever be on a touch screen. */
+.consent-item input {
+  accent-color: var(--sa-teal);
+  height: 1.5rem;
+  margin: 0;
+  width: 1.5rem;
+}
+
+.consent-item label {
+  cursor: pointer;
+}
+
+.consent-actions {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sa-space-4);
+}
+
+.btn[aria-disabled="true"] {
+  background-color: var(--sa-ink-soft);
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.btn[aria-disabled="true"]:hover {
+  background-color: var(--sa-ink-soft);
+}
+
+.consent-status {
+  color: var(--sa-ink-soft);
+  font-size: var(--sa-size-small);
+}
+
+/* Embedded form ----------------------------------------------------------- */
+
+.form-embed {
+  border: 0;
+  border-radius: var(--sa-radius);
+  box-shadow: var(--sa-shadow);
+  display: block;
+  height: min(80vh, 55rem);
+  width: 100%;
+}
+
+/* Legal pages ------------------------------------------------------------- */
+
+.legal {
+  margin-inline: auto;
+  max-width: 44rem;
+  text-align: start;
+}
+
+.legal h2 {
+  margin-block-start: var(--sa-space-7);
+}
+
+.legal h3 {
+  margin-block-start: var(--sa-space-5);
+}
+
+.legal p,
+.legal ul,
+.legal ol {
+  margin-block-start: var(--sa-space-4);
+}
+
+.legal ul,
+.legal ol {
+  padding-inline-start: var(--sa-space-5);
+}
+
+.legal li + li {
+  margin-block-start: var(--sa-space-2);
+}
+
+.legal-meta {
+  color: var(--sa-ink-soft);
+  font-size: var(--sa-size-small);
+}
+
+/* A wide table scrolls inside its own box rather than pushing the page sideways. */
+.table-scroll {
+  margin-block-start: var(--sa-space-4);
+  overflow-x: auto;
+}
+
+.legal table {
+  border-collapse: collapse;
+  min-width: 24rem;
+  width: 100%;
+}
+
+.legal th,
+.legal td {
+  border-block-end: 1px solid rgb(48 56 66 / 15%);
+  padding: var(--sa-space-3);
+  text-align: start;
+  vertical-align: top;
+}
+
+.legal th {
+  font-weight: var(--sa-weight-semibold);
+}
+
+/* Anything still waiting on a decision from the client. Deliberately loud so
+   it cannot go live unnoticed. */
+.todo {
+  background-color: var(--sa-white);
+  border-inline-start: 4px solid var(--sa-teal);
+  border-radius: var(--sa-radius-sm);
+  margin-block-start: var(--sa-space-4);
+  padding: var(--sa-space-4);
+}
+
+.todo p {
+  margin-block-start: 0;
+}
+
 /* Footer ------------------------------------------------------------------ */
 
 .site-footer {

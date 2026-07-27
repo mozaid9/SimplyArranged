@@ -2,6 +2,40 @@
 
 Running log. Newest at the top. Every entry gets a date and a reason so nobody has to guess later.
 
+## 27 July 2026, later
+
+### Every change gets pushed
+
+Client instruction. Work goes straight to `main` on `github.com/mozaid9/SimplyArranged` as it is finished, rather than sitting locally.
+
+### simplyarranged@hotmail.com is the contact for everything
+
+Client instruction. It is now the contact address in the footer of every page, in the privacy policy, in the terms and as the address for data requests and consent withdrawal. The WhatsApp number stays alongside it because people already use it and it is already public on the form.
+
+### The domain is parked as a topic
+
+Client instruction. The DNS repoint at IONOS and anything else about going live is off the list for now. The site is being built to be ready, not to be launched. `og:url` tags still point at `simplyarranged.co.uk` because that is where it will eventually live, and they cost nothing to leave in place.
+
+### Consent gate built in front of the form
+
+The Microsoft Form has one tickbox, "I accept the T&C", pointing at terms that were never published, and it goes on to collect religion, school of thought, prayer practice, ethnicity and disability. `join.html` now puts explicit consent in front of it: two unticked boxes, plain wording about what is collected and who sees it, and a button that does nothing until both are ticked.
+
+The Microsoft iframe holds its URL in `data-src` and only gets a real `src` once consent is given, so nothing is requested from Microsoft and no cookie of theirs is set beforehand. That is also why the site needs no cookie banner.
+
+Two honest limits, both written up in `docs/consent.md`. The gate stores nothing, so it is not a record of consent. And the form URL still works if somebody goes straight to it, so it is not a hard gate. The durable record needs a consent question inside the form itself, and the wording to paste in is in that same file.
+
+With JavaScript off the button stays an ordinary link to the form and the consent wording is still on the page above it.
+
+### Privacy policy and terms drafted
+
+`web/privacy.html` and `web/terms.html`. Both are real drafts rather than placeholder pages, because the consent tickboxes have to point at something. Both carry a loud unresolved block at the top and neither is fit to publish until the registered business details, the ICO number, a retention period and the refund position exist, and somebody qualified has read them.
+
+Anything genuinely undecided is a `.todo` block on the page rather than an invented answer. There are five on the privacy policy and four on the terms.
+
+### CLS of 0.07 on the join page
+
+Lighthouse gives accessibility, best practices and SEO 100 across the site. The join page shifts 0.07 as the Google Fonts swap lands on a long page of text. That is inside the 0.1 "good" threshold so it is being left alone. If it ever needs fixing, the answer is fallback font metrics with `size-adjust` rather than anything clever.
+
 ## 27 July 2026
 
 ### Repo lives at the existing GitHub remote

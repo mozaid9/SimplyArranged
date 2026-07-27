@@ -11,22 +11,28 @@ Tagline: Stress free pairing for Muslims.
 | `HANDOVER.md` | The full spec, 20 sections. Phase 1 is sections 1 to 7, phase 2 is 8 to 17, open questions are section 19 |
 | `CLAUDE.md` | Working rules that apply to every task, including the writing rules |
 | `docs/decisions.md` | Running log of decisions and why |
+| `docs/consent.md` | Why the consent gate exists, what it does not do and what still needs doing |
 | `docs/form-schema.md` | The 40 fields on the live Microsoft Form, and how they map to the phase 2 data model |
 | `assets/brand/Simply_Arranged.pdf` | The flyer. Source of truth for brand and copy |
 
 ## Where things stand
 
-Phase 1 is the marketing website. The home page is built. About, process, join, privacy and terms are not.
+Phase 1 is the marketing website. Home, join, privacy and terms are built. About and process are not, because both are waiting on content from the client.
 
-Sign ups still run through a Microsoft Form at `forms.office.com/r/pAn3746bN1`, which is also where `bit.ly/simplyarranged` and `simplyarranged.co.uk` point today. The domain is registered on IONOS, so launching means repointing DNS at Firebase Hosting rather than buying anything.
+Sign ups run through a Microsoft Form at `forms.office.com/r/pAn3746bN1`. The join page puts an explicit consent gate in front of it and embeds it, so nobody reaches the form without being told what happens to their information. Read `docs/consent.md` before touching any of that.
+
+The privacy policy and the terms are drafts and say so on the page. They are not fit to publish yet.
+
+Contact for everything is simplyarranged@hotmail.com.
 
 ## Layout
 
 ```
 assets/brand/     the flyer, the extracted artwork and the source hero
-docs/             decisions log and the form schema
+docs/             decisions log, consent notes and the form schema
 web/              phase 1, the public site
   css/            tokens.css holds every colour, size and spacing value
+  js/             join.js, the consent gate
   img/            site artwork, generated from the flyer
 ```
 
