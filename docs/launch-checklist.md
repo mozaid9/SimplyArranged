@@ -32,6 +32,7 @@ Tracked as items 12 to 18 in section 19 of `HANDOVER.md`.
 ## Then the launch itself
 
 - [ ] Firebase project created and `.firebaserc` filled in
+- [ ] **Move the Firebase project to the business account.** The intention was to own it from `simplyarranged@hotmail.com`, but Google would not let a new account be created at the time, so the project sits under a personal Google account for now. That is fine for a review link and wrong for a live service. Register the hotmail address as a Google account when Google allows it, add it as an owner in the console, then remove the personal one. This is handover open item 7
 - [ ] `firebase deploy --only hosting` to the live channel rather than a preview channel
 - [ ] IONOS DNS: drop the forward to the form, point the apex and `www` at Firebase Hosting
 - [ ] Check HTTPS is live on both the apex and `www`
