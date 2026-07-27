@@ -112,13 +112,22 @@
       </div>
     </section>
 
-    <!-- Mufti video. Placeholder until the recording exists, handover open item 9. -->
+    <!-- The introduction video, taken from page two of the sign up form.
+         Nothing is requested from Google until somebody presses play. See js/video.js. -->
     <section class="section">
       <div class="container stack">
-        <h2 class="text-centre">A word from our mufti</h2>
-        <div class="video-frame">
-          <p>The video is being recorded and will appear here once it is ready.</p>
+        <h2 class="text-centre">An introduction to Simply Arranged</h2>
+        <div class="video"
+             data-video
+             data-video-src="https://www.youtube-nocookie.com/embed/9obGfOTHKpM?modestbranding=1&amp;rel=0"
+             data-video-title="An introduction to Simply Arranged">
+          <img class="video-poster" src="img/video-poster.jpg" alt="" width="480" height="270" loading="lazy">
+          <button class="video-play" type="button" data-video-play>
+            <span class="video-play-icon" aria-hidden="true"></span>
+            <span class="video-play-text">Play the introduction video</span>
+          </button>
         </div>
+        <p class="note text-centre">Pressing play loads the video from YouTube. Nothing is sent to them before that.</p>
       </div>
     </section>
 
@@ -154,5 +163,7 @@
       </nav>
     </div>
   </footer>
+
+  <script src="js/video.js"></script>
 </body>
 </html>

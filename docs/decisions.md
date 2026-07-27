@@ -2,6 +2,28 @@
 
 Running log. Newest at the top. Every entry gets a date and a reason so nobody has to guess later.
 
+## 27 July 2026, the video
+
+### The introduction video is now on the home page
+
+Client confirmed the video from page two of the sign up form is the one to use. It is on the client's own YouTube channel at `youtube.com/@SimplyArranged`, video id `9obGfOTHKpM`, and the placeholder card on `index.html` is gone.
+
+The section heading is "An introduction to Simply Arranged" rather than the "A word from our mufti" that handover section 7 asked for, because that is what the form calls it and there is nothing to say it is the mufti speaking. Change the heading if it turns out to be. Open item 9 is closed either way, since a video now exists and is embedded.
+
+### Click to play rather than a plain embed
+
+A YouTube iframe sets third party cookies the moment the page loads, which would have made the privacy policy wrong on two counts. It says the site sets no cookies, and it explains that there is no cookie banner because nothing third party loads until the visitor asks for it.
+
+So the page ships a local poster image and a play button, and `js/video.js` swaps in the iframe on click. Same pattern as the consent gate holding the Microsoft form in `data-src`. The embed uses `youtube-nocookie.com`, so even after playback Google is not setting its usual tracking cookies.
+
+Side benefit, the home page makes no request to Google for the video at all, which keeps it fast.
+
+### The poster has black bars and that is correct
+
+`web/img/video-poster.jpg` is the video's real first frame. Measuring the YouTube thumbnail showed three bands: YouTube's own letterboxing at 45 pixels top and bottom, then the video frame, then black bars inside the video itself because the source artwork is a wide banner on black. The stored poster has YouTube's bars removed and the video's own left in, because those are genuinely what the video looks like.
+
+If it ever wants to look better on a cream page, the fix is at the video end rather than ours. Re-export it without the internal letterboxing, or supply a proper poster image.
+
 ## 27 July 2026, the form as the source of truth
 
 ### ICO registration is deferred

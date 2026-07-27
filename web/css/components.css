@@ -208,21 +208,84 @@
 
 /* Video ------------------------------------------------------------------- */
 
+/* Shared by the poster facade and by the iframe that replaces it, so swapping
+   one for the other does not move the page. */
+.video,
 .video-frame {
   aspect-ratio: 16 / 9;
-  background-color: var(--sa-white);
+  border: 0;
   border-radius: var(--sa-radius);
   box-shadow: var(--sa-shadow);
-  display: grid;
+  display: block;
   margin-inline: auto;
   max-width: var(--sa-measure);
-  padding: var(--sa-space-5);
-  place-content: center;
-  text-align: center;
+  overflow: hidden;
+  width: 100%;
 }
 
-.video-frame p {
-  color: var(--sa-ink-soft);
+.video {
+  background-color: var(--sa-night);
+  position: relative;
+}
+
+.video-poster {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+/* The whole poster is the button. */
+.video-play {
+  background: none;
+  border: 0;
+  cursor: pointer;
+  display: grid;
+  inset: 0;
+  padding: 0;
+  place-content: center;
+  position: absolute;
+  width: 100%;
+}
+
+.video-play-icon {
+  background-color: var(--sa-teal);
+  border-radius: 50%;
+  box-shadow: var(--sa-shadow-raised);
+  display: block;
+  height: 4rem;
+  position: relative;
+  transition: background-color var(--sa-transition);
+  width: 4rem;
+}
+
+/* The triangle, drawn with a border rather than shipped as an asset. */
+.video-play-icon::after {
+  border-block: 0.7rem solid transparent;
+  border-inline-start: 1.15rem solid var(--sa-cream);
+  content: "";
+  inset-block-start: 50%;
+  inset-inline-start: 55%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+.video-play:hover .video-play-icon {
+  background-color: var(--sa-teal-dark);
+}
+
+/* Visible to a screen reader, and the ring still lands on the whole poster. */
+.video-play-text {
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.video-play:focus-visible {
+  outline: var(--sa-focus-width) solid var(--sa-teal);
+  outline-offset: calc(var(--sa-focus-offset) * -2);
 }
 
 /* Eligibility note -------------------------------------------------------- */
