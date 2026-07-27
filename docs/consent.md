@@ -2,7 +2,14 @@
 
 The sign up form collects religion, school of thought, how a member practises, ethnicity and disability. All of that is special category data under UK GDPR and the only lawful basis available is explicit consent. Explicit means specific wording, an unticked box, and a record of what was agreed and when.
 
-Today the Microsoft Form has one tickbox, "I accept the T&C", pointing at terms that were never published. That does not carry any of it.
+Today the Microsoft Form has one tickbox, "I accept the T&C".
+
+The terms themselves do exist. They sit on page nine of the form as a wall of text above the tickbox, and they are now published properly at `web/terms.html`. So the tickbox is not pointing at nothing in the way it first appeared. What it still does not do is any of the following:
+
+- Name the special category data. It covers conduct and liability, not religion, ethnicity or health
+- Point at a privacy policy, because until now there was not one
+- Record a version, so there is no way to say which wording somebody agreed to
+- Sit anywhere a person could read it before starting the form rather than nine pages in
 
 ## What is now in place
 
@@ -73,4 +80,8 @@ The real fix, for phase 2. A form on our own domain posting to a Cloud Function 
 
 ## Existing responses
 
-Anyone who filled in the form before this was set up consented only to "I accept the T&C" against unpublished terms. Worth deciding what to do about them. The cautious option is to email everyone already on the list once the policy is published and ask them to confirm consent against the new wording.
+**132 people as at 27 July 2026**, taken from the form's own response count.
+
+Every one of them consented to "I accept the T&C" and nothing else, against terms that did not exist to be read. None of them has a recorded consent to the religion, ethnicity or disability questions they answered, and there is no consent version stored against any of them.
+
+The cautious option, once the privacy policy and terms are published, is to email all 132 and ask them to confirm consent against the new wording. That is a real piece of work and it gets harder the longer the list grows, which is an argument for adding the consent questions to the form sooner rather than later.

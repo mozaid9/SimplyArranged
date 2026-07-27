@@ -2,6 +2,50 @@
 
 Running log. Newest at the top. Every entry gets a date and a reason so nobody has to guess later.
 
+## 27 July 2026, the form as the source of truth
+
+### ICO registration is deferred
+
+Client decision. It happens once everything else is set up rather than now. The consequence is worth stating plainly: the privacy policy cannot be published without the registration number, and the consent tickboxes point at the privacy policy. So nothing goes live until this is done. Since nothing is deployed and the domain is parked, that costs nothing today.
+
+### The form is authoritative, and it contained far more than its 40 questions
+
+Client instruction was that whatever the form says is exactly what happens. Reading it properly while signed in turned up eleven section pages carrying content that none of the earlier extraction picked up, because the first pass only pulled `questions` and this lives in `descriptiveQuestions`.
+
+**Terms and conditions already exist.** Page nine of the form is an acceptance page carrying a "Simply Arranged will" list, a "Your promise to us" list and a full disclaimer. They were never published anywhere a person could read them before signing up, which is why the tickbox pointed at nothing. `terms.html` now carries them as written, per the rule in `CLAUDE.md` about client copy, with a note saying which parts are theirs and which are drafted around them.
+
+**There is an FAQ.** It answers several things that were sitting open:
+
+| Question | Answer on the form |
+|---|---|
+| When does the subscription begin | As soon as a strong potential match is presented to you |
+| How long | Six months from that first match |
+| Cost | £35 for six months |
+| What if nobody is found in six months | You can choose to extend |
+| Why an admin fee | To make sure everyone registering is serious and committed, and to cover some day to day running costs |
+| Why photos | So we can be fully transparent with potential matches. Only shared with your permission |
+| Why the phone call | To really get to know you and your interests |
+
+Two corrections came out of that. The site said the fee automatically becomes another £35, and it is actually a choice to extend. And the fee rationale on the site was only the running costs half. The commitment half is the client's own first reason and it is now the first one given.
+
+**Photos were missing from the site entirely.** The form asks for two to five recent unfiltered photos sent by WhatsApp to 07471881952. They are shown to a match only once the member gives permission. Photos of women who wear niqab are meant to be seen only by a female team member, and the form is honest that during matching this cannot always be guaranteed. None of that was in the privacy policy, which is a real gap rather than a cosmetic one, and it also drags Meta in as a processor. Now covered, including the honest caveat, and the process page mentions photos as part of step one.
+
+**The guardian question, open item 1, is largely answered.** The form says at least one parent or guardian should ideally know about the member's involvement, and should ideally also be involved when matches are presented and when meetings are arranged. So the guardian is a participant, not just a recorded name. The about page now says that properly.
+
+**Verification, open item 6, is answered.** The disclaimer states plainly that there are no background checks and no identity verification. That is now on the privacy policy as well as in the terms rather than left as a soft "we cannot verify everything".
+
+**Still silent on the bit that was actually flagged.** Nothing anywhere in the form covers one match at a time, whether a member is told the other side's answer, or not being put forward to the same person twice. Those three claims on `about.html` and `process.html` come from section 9 of the handover and remain unverified. The todo blocks stay.
+
+**There is an introduction video.** Page two of the form asks people to watch one. Worth finding out whether it is the mufti video from open item 9 or something else, because if it exists it could go on the home page where there is currently a placeholder.
+
+### 132 people have already signed up
+
+Seen in the form's own summary while checking the above. That number changes the shape of the consent problem in `docs/consent.md`. It is not an abstract gap, it is 132 real people who agreed to "I accept the T&C" against terms that were never published. Whatever is decided about re-consenting, it is 132 emails rather than a handful.
+
+### The form understates how long it takes
+
+The form tells people it takes about ten minutes. The average across those 132 responses is nearer half an hour. `join.html` now says twenty to thirty minutes, because somebody who sits down expecting ten and hits eleven pages is a person who abandons it halfway. Worth changing on the form itself too.
+
 ## 27 July 2026, about
 
 ### The fee, the meeting and the failed match all appear on About as well
