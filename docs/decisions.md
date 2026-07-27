@@ -2,6 +2,30 @@
 
 Running log. Newest at the top. Every entry gets a date and a reason so nobody has to guess later.
 
+## 27 July 2026, about
+
+### The fee, the meeting and the failed match all appear on About as well
+
+Client instruction, and the reasoning is worth keeping: better that people are made aware than that it sits at the bottom of a page nobody scrolls to.
+
+So About carries all three, rewritten for that page rather than pasted across. The fee section opens with "we would rather tell you this here than leave you to find it in the small print" and closes with "there is nothing else to pay and nothing hidden underneath it". The failed match section leads on the fear of being turned down being the thing that stops people starting at all.
+
+The supervised meeting wording and the failed match wording are word for word identical on both pages. Deliberate, because both readings need the same promise, but it is now two places to edit. With no build step there is no include mechanism to lean on. If a third page ever needs the same text, that is the point to stop copying and reach for one.
+
+### About page built
+
+`web/about.html`. Why we started, doing it the halal way, what a supervised meeting means, what we charge and why, what happens when it does not work out, then the team.
+
+The four halal principles are drawn from what the service already does rather than invented: no member to member contact from handover section 17, same gender calls from the form's own preamble, supervised meetings from the flyer, and the parent or guardian fields from the form.
+
+The opening section uses the flyer's samosas line as written and then adds a paragraph about how the search usually goes. That paragraph is brand colour rather than fact and the client should read it as such.
+
+The team section is still a placeholder. Real names and photos are handover open item 10 and they are the last thing missing from phase 1.
+
+### Card alignment
+
+`.reasons-long` added. The short flyer lines on the home page read fine centred. The longer About cards with a bold lead in do not, so they range left.
+
 ## 27 July 2026, the fee
 
 ### The £35 is per six months, not per match

@@ -165,6 +165,12 @@
   text-align: center;
 }
 
+/* Centring works for the short flyer lines on the home page. Longer cards with
+   a bold lead in read better ranged left. */
+.reasons-long .reason {
+  text-align: start;
+}
+
 /* Process ----------------------------------------------------------------- */
 
 .process {
