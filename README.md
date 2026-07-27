@@ -17,7 +17,7 @@ Tagline: Stress free pairing for Muslims.
 
 ## Where things stand
 
-Phase 1 is the marketing website. Home, join, privacy and terms are built. About and process are not, because both are waiting on content from the client.
+Phase 1 is the marketing website. Home, process, join, privacy and terms are built. About is not, because it is waiting on real names and photos.
 
 Sign ups run through a Microsoft Form at `forms.office.com/r/pAn3746bN1`. The join page puts an explicit consent gate in front of it and embeds it, so nobody reaches the form without being told what happens to their information. Read `docs/consent.md` before touching any of that.
 

@@ -2,6 +2,29 @@
 
 Running log. Newest at the top. Every entry gets a date and a reason so nobody has to guess later.
 
+## 27 July 2026, the fee
+
+### The £35 is per six months, not per match
+
+Client answer, and it settles most of open item 5 in the handover.
+
+- Charged once a match is found. Nothing at sign up, nothing while the search runs
+- Covers the six months that follow
+- Still a member at the end of six months, another £35 for the next six
+- The money is reinvested into running the service
+
+The reason given, which is now on the process page in the client's own framing: matchmaking done properly takes real time, and they would rather charge a small fee and get it right than do it quickly and get it wrong.
+
+Two parts of it are still open. Whether a second match inside the same six months is covered by the original fee, which is how `process.html` currently reads because the fee is tied to a period rather than to a match. And the refund position. Both are visible todo blocks on the page.
+
+This also confirms the phase 2 schema decision in handover section 15 was the right one. Payments track a period rather than a specific match, which is exactly what a recurring six month fee needs.
+
+### Process page built
+
+`web/process.html`. The five flyer steps with a paragraph of expansion under each, the fee section, what a supervised meeting actually involves and what happens if a match does not work out.
+
+The last of those is written from the one match at a time and double blind rules in handover section 9, which describe the intended product rather than anything confirmed about today's manual process. Flagged on the page as needing a check before launch. About is still the only page not built, and it is waiting on real names and photos.
+
 ## 27 July 2026, later
 
 ### Every change gets pushed

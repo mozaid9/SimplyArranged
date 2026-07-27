@@ -178,6 +178,11 @@
   text-align: center;
 }
 
+/* The flyer line comes first, then any expansion of it on the process page. */
+.process-step p + p {
+  margin-block-start: var(--sa-space-3);
+}
+
 /* The flyer's pill shaped label for each step name. */
 .step-label {
   background-color: var(--sa-night);
