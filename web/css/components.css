@@ -1,0 +1,284 @@
+/* Components. Flat specificity, single class selectors wherever possible. */
+
+/* Header ------------------------------------------------------------------ */
+
+.site-header {
+  padding-block: var(--sa-space-4);
+}
+
+.site-header .container {
+  align-items: center;
+  column-gap: var(--sa-space-5);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  row-gap: var(--sa-space-3);
+}
+
+.brand {
+  align-items: center;
+  color: var(--sa-ink);
+  display: flex;
+  gap: var(--sa-space-3);
+  text-decoration: none;
+}
+
+.brand:hover {
+  color: var(--sa-ink);
+}
+
+.brand-mark {
+  width: 2.25rem;
+}
+
+.brand-name {
+  font-size: 1.5rem;
+  font-weight: var(--sa-weight-semibold);
+  letter-spacing: -0.01em;
+  line-height: 1;
+}
+
+.brand-tagline {
+  color: var(--sa-teal);
+  display: block;
+  font-size: var(--sa-size-small);
+  font-weight: var(--sa-weight-regular);
+  line-height: 1.4;
+}
+
+.nav-list {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sa-space-4) var(--sa-space-5);
+  justify-content: center;
+  margin: 0;
+}
+
+/* Its own class rather than .site-nav a, so it never competes with .btn on the
+   Join link sitting in the same list. */
+.nav-link {
+  color: var(--sa-ink-soft);
+  font-weight: var(--sa-weight-semibold);
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  color: var(--sa-teal);
+  text-decoration: underline;
+}
+
+/* Buttons ----------------------------------------------------------------- */
+
+.btn {
+  background-color: var(--sa-teal);
+  border: 0;
+  border-radius: var(--sa-radius-pill);
+  color: var(--sa-cream);
+  display: inline-block;
+  font-family: inherit;
+  font-size: var(--sa-size-body);
+  font-weight: var(--sa-weight-semibold);
+  padding: var(--sa-space-3) var(--sa-space-6);
+  text-align: center;
+  text-decoration: none;
+  transition: background-color var(--sa-transition);
+}
+
+.btn:hover {
+  background-color: var(--sa-teal-dark);
+  color: var(--sa-cream);
+}
+
+.btn-large {
+  font-size: var(--sa-size-lead);
+  padding: var(--sa-space-4) var(--sa-space-7);
+}
+
+/* Reversed out of a teal band. */
+.btn-inverse {
+  background-color: var(--sa-cream);
+  color: var(--sa-teal-dark);
+}
+
+.btn-inverse:hover {
+  background-color: var(--sa-white);
+  color: var(--sa-teal-dark);
+}
+
+/* Headings ---------------------------------------------------------------- */
+
+/* Over the Rainbow, section titles only. Never body copy, never buttons. */
+.script-title {
+  color: var(--sa-teal);
+  font-family: var(--sa-font-script);
+  font-size: var(--sa-size-script);
+  font-weight: var(--sa-weight-regular);
+  line-height: 1.3;
+  text-align: center;
+}
+
+.band-title {
+  font-size: var(--sa-size-heading);
+  font-weight: var(--sa-weight-regular);
+  margin-inline: auto;
+  max-width: var(--sa-measure);
+}
+
+/* Hero -------------------------------------------------------------------- */
+
+.hero {
+  text-align: center;
+}
+
+.hero-lead {
+  color: var(--sa-teal-dark);
+  font-size: var(--sa-size-lead);
+  margin-inline: auto;
+  max-width: var(--sa-measure);
+}
+
+/* width plus max-width, not max-width alone, so this never beats the
+   max-width: 100% in base.css and overflow a narrow screen. */
+.hero-image {
+  border-radius: var(--sa-radius);
+  box-shadow: var(--sa-shadow);
+  margin-inline: auto;
+  max-width: 26rem;
+  width: 100%;
+}
+
+/* Reasons ----------------------------------------------------------------- */
+
+.reasons {
+  display: grid;
+  gap: var(--sa-space-4);
+  margin-inline: auto;
+  max-width: var(--sa-measure);
+}
+
+.reason {
+  background-color: var(--sa-white);
+  border-radius: var(--sa-radius);
+  box-shadow: var(--sa-shadow);
+  padding: var(--sa-space-5);
+  text-align: center;
+}
+
+/* Process ----------------------------------------------------------------- */
+
+.process {
+  display: grid;
+  gap: var(--sa-space-6);
+  margin-inline: auto;
+  max-width: var(--sa-measure);
+}
+
+.process-step {
+  text-align: center;
+}
+
+/* The flyer's pill shaped label for each step name. */
+.step-label {
+  background-color: var(--sa-night);
+  border-radius: var(--sa-radius-pill);
+  color: var(--sa-cream);
+  display: inline-block;
+  font-size: var(--sa-size-small);
+  font-weight: var(--sa-weight-semibold);
+  margin-block-end: var(--sa-space-3);
+  padding: var(--sa-space-2) var(--sa-space-4);
+}
+
+.step-number {
+  margin-inline-end: var(--sa-space-2);
+  opacity: 0.7;
+}
+
+/* Video ------------------------------------------------------------------- */
+
+.video-frame {
+  aspect-ratio: 16 / 9;
+  background-color: var(--sa-white);
+  border-radius: var(--sa-radius);
+  box-shadow: var(--sa-shadow);
+  display: grid;
+  margin-inline: auto;
+  max-width: var(--sa-measure);
+  padding: var(--sa-space-5);
+  place-content: center;
+  text-align: center;
+}
+
+.video-frame p {
+  color: var(--sa-ink-soft);
+}
+
+/* Eligibility note -------------------------------------------------------- */
+
+.note {
+  color: var(--sa-ink-soft);
+  font-size: var(--sa-size-small);
+  margin-inline: auto;
+  max-width: var(--sa-measure);
+}
+
+/* Same note reversed out of a teal band. Cream on teal measures 5.2 to 1, so it
+   clears AA for normal text. */
+.note-inverse {
+  color: var(--sa-cream);
+  font-size: var(--sa-size-small);
+  margin-inline: auto;
+  max-width: var(--sa-measure);
+}
+
+/* Footer ------------------------------------------------------------------ */
+
+.site-footer {
+  background-color: var(--sa-night);
+  color: var(--sa-cream);
+  padding-block: var(--sa-space-7);
+}
+
+.site-footer a {
+  color: var(--sa-cream);
+}
+
+.site-footer :focus-visible {
+  outline-color: var(--sa-cream);
+}
+
+.footer-grid {
+  display: grid;
+  gap: var(--sa-space-6);
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sa-space-4) var(--sa-space-5);
+  margin: 0;
+}
+
+.footer-small {
+  color: var(--sa-cream);
+  font-size: var(--sa-size-small);
+  opacity: 0.85;
+}
+
+@media (min-width: 40rem) {
+  .footer-grid {
+    grid-template-columns: 1fr auto;
+    align-items: start;
+  }
+}
+
+/* Not found --------------------------------------------------------------- */
+
+.notfound {
+  display: grid;
+  gap: var(--sa-space-5);
+  min-height: 50vh;
+  place-content: center;
+  text-align: center;
+}

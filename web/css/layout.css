@@ -1,0 +1,53 @@
+/* Page structure. One centred column, generous vertical rhythm, full bleed
+   teal bands between sections in the same way the flyer separates them.
+
+   Section spacing has exactly one owner, the .section rule below. Nothing else
+   sets top or bottom padding on a section, so there is nothing to fight with. */
+
+.container {
+  margin-inline: auto;
+  max-width: var(--sa-container);
+  padding-inline: var(--sa-gutter);
+  width: 100%;
+}
+
+.section {
+  padding-block: var(--sa-section-gap);
+}
+
+/* Full bleed teal, cream text. */
+.band {
+  background-color: var(--sa-teal);
+  color: var(--sa-cream);
+  padding-block: var(--sa-space-7);
+  text-align: center;
+}
+
+/* A plain link inside a teal band. Its own class rather than .band a, so it
+   never competes with .btn on a button sitting in the same band. */
+.band-link {
+  color: var(--sa-cream);
+}
+
+.band-night {
+  background-color: var(--sa-night);
+}
+
+/* Centred running text stays inside a comfortable measure. */
+.prose {
+  margin-inline: auto;
+  max-width: var(--sa-measure);
+  text-align: center;
+}
+
+.stack > * + * {
+  margin-block-start: var(--sa-space-5);
+}
+
+.stack-tight > * + * {
+  margin-block-start: var(--sa-space-3);
+}
+
+.text-centre {
+  text-align: center;
+}

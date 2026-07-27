@@ -1,0 +1,62 @@
+/* Design tokens for Simply Arranged.
+   Everything visual comes from here. No other stylesheet hardcodes a colour,
+   a font size or a spacing value. Colours are sampled from the flyer PDF. */
+
+:root {
+  /* Colour */
+  --sa-cream: #F5F5E7;
+  --sa-teal: #187267;
+  --sa-teal-dark: #125A51;
+  --sa-ink: #000000;
+  --sa-ink-soft: #303842;
+  --sa-night: #051F31;
+  --sa-white: #FDFDFD;
+
+  /* Type families. Over the Rainbow is for section titles only. */
+  --sa-font: "Poppins", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --sa-font-script: "Over the Rainbow", "Poppins", cursive;
+
+  /* Type scale, fluid between a 320px and a 1280px viewport */
+  --sa-size-hero: clamp(2.5rem, 2.1667rem + 1.6667vw, 3.5rem);      /* 40 to 56 */
+  --sa-size-script: clamp(2rem, 1.75rem + 1.25vw, 2.75rem);         /* 32 to 44 */
+  --sa-size-heading: clamp(1.5rem, 1.3333rem + 0.8333vw, 2rem);     /* 24 to 32 */
+  --sa-size-lead: clamp(1.125rem, 1.0833rem + 0.2083vw, 1.25rem);   /* 18 to 20 */
+  --sa-size-body: clamp(1.0625rem, 1.0417rem + 0.1042vw, 1.125rem); /* 17 to 18 */
+  --sa-size-small: 0.875rem;                                         /* 14 */
+
+  --sa-weight-regular: 400;
+  --sa-weight-semibold: 600;
+  --sa-weight-bold: 700;
+
+  --sa-leading-tight: 1.15;
+  --sa-leading-body: 1.6;
+
+  /* Spacing */
+  --sa-space-1: 0.25rem;
+  --sa-space-2: 0.5rem;
+  --sa-space-3: 0.75rem;
+  --sa-space-4: 1rem;
+  --sa-space-5: 1.5rem;
+  --sa-space-6: 2rem;
+  --sa-space-7: 3rem;
+  --sa-space-8: 4rem;
+
+  /* One value owns the vertical rhythm between sections */
+  --sa-section-gap: clamp(3rem, 8vw, 5rem);
+
+  /* Measure. The flyer is a centred single column and the site matches it. */
+  --sa-container: 60rem;
+  --sa-measure: 34rem;
+  --sa-gutter: clamp(1.25rem, 5vw, 2rem);
+
+  /* Shape. Soft shadows only, no harsh borders. */
+  --sa-radius-sm: 8px;
+  --sa-radius: 12px;
+  --sa-radius-pill: 999px;
+  --sa-shadow: 0 2px 12px rgb(5 31 49 / 8%);
+  --sa-shadow-raised: 0 4px 20px rgb(5 31 49 / 12%);
+
+  --sa-focus-width: 3px;
+  --sa-focus-offset: 3px;
+  --sa-transition: 150ms ease;
+}

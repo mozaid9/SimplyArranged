@@ -1,0 +1,138 @@
+/* Reset, document defaults and accessibility basics. */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+ol,
+figure {
+  margin: 0;
+}
+
+ul[class],
+ol[class] {
+  padding: 0;
+  list-style: none;
+}
+
+html {
+  scroll-behavior: smooth;
+  text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--sa-cream);
+  color: var(--sa-ink);
+  font-family: var(--sa-font);
+  font-size: var(--sa-size-body);
+  font-weight: var(--sa-weight-regular);
+  line-height: var(--sa-leading-body);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+svg {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3 {
+  line-height: var(--sa-leading-tight);
+  text-wrap: balance;
+}
+
+h1 {
+  color: var(--sa-teal);
+  font-size: var(--sa-size-hero);
+  font-weight: var(--sa-weight-bold);
+}
+
+h2 {
+  font-size: var(--sa-size-heading);
+  font-weight: var(--sa-weight-semibold);
+}
+
+h3 {
+  font-size: var(--sa-size-body);
+  font-weight: var(--sa-weight-semibold);
+}
+
+p {
+  text-wrap: pretty;
+}
+
+a {
+  color: var(--sa-teal-dark);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+
+a:hover {
+  color: var(--sa-teal);
+}
+
+/* Focus rings stay visible and stay teal. */
+:focus-visible {
+  outline: var(--sa-focus-width) solid var(--sa-teal);
+  outline-offset: var(--sa-focus-offset);
+  border-radius: var(--sa-radius-sm);
+}
+
+/* On teal backgrounds the ring flips to cream so it is still readable. */
+.band :focus-visible {
+  outline-color: var(--sa-cream);
+}
+
+.skip-link {
+  background-color: var(--sa-teal);
+  border-radius: 0 0 var(--sa-radius-sm) 0;
+  color: var(--sa-cream);
+  left: 0;
+  padding: var(--sa-space-3) var(--sa-space-4);
+  position: absolute;
+  top: 0;
+  transform: translateY(-110%);
+  z-index: 10;
+}
+
+.skip-link:focus {
+  color: var(--sa-cream);
+  transform: translateY(0);
+}
+
+.visually-hidden {
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
