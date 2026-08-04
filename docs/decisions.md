@@ -63,9 +63,13 @@ That leaves the heading on its own, which turns out to work. It now reads as the
 
 The four principles were the clearest statement anywhere on the site of how the service actually works. No member to member contact, same gender calls, supervised meetings, family involved. All four are still true and all four are still in the terms. If any of it goes back, this is the wording to go back to, and it is in git.
 
-### Alignment is now inconsistent across the three main pages
+### Opening headings are centred on all four public pages
 
-Home and about centre their opening heading. Process does not, because nobody asked for it. Worth settling one way or the other, and it is a one line change either way.
+Home, about, process and join now all open with `class="section hero"`, so the heading and the lead paragraph are centred. Join also had a note that was individually centred with `text-centre` while the heading above it was not, which is now unnecessary and has been removed.
+
+The two legal pages stay ranged left on purpose. They are long form text read for reference rather than marketing pages, and centred body copy at that length is hard work. The `.legal` class already handles them.
+
+The consent block on the join page also stays ranged left, because `.consent` sets it explicitly. Centred tickbox labels would be unreadable.
 
 ## 27 July 2026, the video
 
