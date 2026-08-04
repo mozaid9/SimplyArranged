@@ -2,6 +2,41 @@
 
 Running log. Newest at the top. Every entry gets a date and a reason so nobody has to guess later.
 
+## 4 August 2026, cutting the pages back
+
+Client instruction, after seeing the site on the review link. The wording was to make it clean first, then carry on, so this is a deliberate simplification rather than anything being lost by accident. All of it is recoverable from git.
+
+### Home page
+
+The hero illustration is gone and the introduction video takes its place, so the video now sits inside the hero rather than in a section of its own further down. Order is heading, lead paragraph, video, then the button.
+
+The client had already made this edit by hand and it left the file with two copies of the video block and unbalanced `section` tags. Rebuilt cleanly. `loading="lazy"` came off the poster because it is above the fold now, where lazy loading only hurts.
+
+### About page
+
+- Heading and lead centred, matching the home page, by putting `hero` on the first section
+- The illustration from the home page opens this page instead
+- "Doing it the halal way" moved above the "Creating a unique matchmaking experience" band
+- Everything after that band removed except "Ready when you are". That means the supervised meeting section, the fee section, the failed match section and the team placeholder
+
+### Process page
+
+Everything between the "You will never be asked to contact anyone yourself" band and "Ready when you are" removed. That means the fee section, the supervised meeting section and the failed match section.
+
+### What this costs, worth knowing
+
+**The fee is barely explained anywhere on the site now.** All that survives is the flyer line inside step three of the process list, "A £35 admin fee covers a 6-month subscription", plus the full terms on `terms.html`. The client's own reasoning, that it keeps the list serious and covers running costs, is no longer on a page anyone reads before signing up. Worth putting back somewhere before launch.
+
+**The reassurance about a match not working out is gone too.** That section existed because the fear of being turned down is what stops people starting. It is now only in the terms.
+
+Both pages end on two teal bands back to back. It reads as one continuous close rather than two blocks with a seam, so it has been left alone.
+
+### The unverified claims are no longer published
+
+The one match at a time, double blind and never rematch wording was on about and process and is now on neither. So the todo blocks flagging it are gone, and the site no longer makes a promise nobody has confirmed. The question itself is still open and still on the launch checklist, it just is not live on a page any more.
+
+Seven of the nine remaining todo blocks are on the two legal pages. Home, about, process and join now carry none.
+
 ## 27 July 2026, the video
 
 ### The introduction video is now on the home page

@@ -19,8 +19,9 @@ Tracked as items 12 to 18 in section 19 of `HANDOVER.md`.
 - [ ] Minimum age, then the same line added to the privacy policy, the terms and the form
 - [ ] Whether people outside the North West are accepted or waitlisted
 - [ ] Whether the Microsoft account holding the form is UK or EU region and whether responses leave the UK
-- [ ] Confirmation of the one match at a time, double blind and never rematch wording on `about.html` and `process.html`
-- [ ] Team names, photos and a line each for the about page
+- [ ] Confirmation of the one match at a time, double blind and never rematch rules. No longer published on any page since the 4 August cut, so this is no longer urgent, but it has to be settled before that wording goes back anywhere
+- [ ] Team names, photos and a line each. The about page section was removed on 4 August, so it needs rebuilding as well as filling
+- [ ] **Decide where the fee gets explained.** The 4 August cut left only the flyer line in step three of the process list and the full terms. The client's own reasoning, that it keeps the list serious and covers running costs, is no longer anywhere a person reads before signing up
 
 ## Jobs in other systems
 

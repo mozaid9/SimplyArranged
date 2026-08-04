@@ -53,13 +53,28 @@
 
   <main id="main">
 
-    <!-- Hero -->
+    <!-- Hero. The illustration that used to sit here has been replaced by the
+         introduction video. The illustration now opens the about page. -->
     <section class="section hero">
       <div class="container stack">
         <h1>Looking to find your partner the halal way?</h1>
         <p class="hero-lead">Simply Arranged blends modern technology with Islamic tradition, helping you find your ideal partner. Our dedicated team is on hand to support you at every step, ensuring a respectful and fulfilling experience.</p>
+
+        <!-- The introduction video, taken from page two of the sign up form.
+             Nothing is requested from Google until somebody presses play. See js/video.js. -->
+        <div class="video"
+             data-video
+             data-video-src="https://www.youtube-nocookie.com/embed/9obGfOTHKpM?modestbranding=1&amp;rel=0"
+             data-video-title="An introduction to Simply Arranged">
+          <img class="video-poster" src="img/video-poster.jpg" alt="" width="480" height="270">
+          <button class="video-play" type="button" data-video-play>
+            <span class="video-play-icon" aria-hidden="true"></span>
+            <span class="video-play-text">Play the introduction video</span>
+          </button>
+        </div>
+        <p class="note">Pressing play loads the video from YouTube. Nothing is sent to them before that.</p>
+
         <p><a class="btn btn-large" href="join.html">Start your journey</a></p>
-        <img class="hero-image" src="img/hero.webp" alt="A couple standing under a crescent moon and a star filled sky." width="960" height="960" fetchpriority="high">
       </div>
     </section>
 
@@ -80,54 +95,6 @@
           <li class="reason">Help and support, before, during and after.</li>
           <li class="reason">We take a professional approach to matchmaking, and ensure complete transparency.</li>
         </ul>
-      </div>
-    </section>
-
-    <!-- The Process, the five steps from the flyer -->
-    <section class="section">
-      <div class="container stack">
-        <h2 class="script-title">The Process</h2>
-        <ol class="process">
-          <li class="process-step">
-            <h3 class="step-label"><span class="step-number" aria-hidden="true">1</span>Start Your Journey</h3>
-            <p>Complete your profile and have a short call with us</p>
-          </li>
-          <li class="process-step">
-            <h3 class="step-label"><span class="step-number" aria-hidden="true">2</span>Search Initiated</h3>
-            <p>Data uploaded and your matchmaking search begins</p>
-          </li>
-          <li class="process-step">
-            <h3 class="step-label"><span class="step-number" aria-hidden="true">3</span>Match Found</h3>
-            <p>A &pound;35 admin fee covers a 6-month subscription, and we will present your match for discussion.</p>
-          </li>
-          <li class="process-step">
-            <h3 class="step-label"><span class="step-number" aria-hidden="true">4</span>Meeting Arranged</h3>
-            <p>If both agree, a supervised meeting at a neutral location will be arranged by us; you may bring someone along.</p>
-          </li>
-          <li class="process-step">
-            <h3 class="step-label"><span class="step-number" aria-hidden="true">5</span>Next Steps</h3>
-            <p>Simply Arranged will contact you within 3 days to discuss how you wish to proceed; further meetings can be arranged.</p>
-          </li>
-        </ol>
-      </div>
-    </section>
-
-    <!-- The introduction video, taken from page two of the sign up form.
-         Nothing is requested from Google until somebody presses play. See js/video.js. -->
-    <section class="section">
-      <div class="container stack">
-        <h2 class="text-centre">An introduction to Simply Arranged</h2>
-        <div class="video"
-             data-video
-             data-video-src="https://www.youtube-nocookie.com/embed/9obGfOTHKpM?modestbranding=1&amp;rel=0"
-             data-video-title="An introduction to Simply Arranged">
-          <img class="video-poster" src="img/video-poster.jpg" alt="" width="480" height="270" loading="lazy">
-          <button class="video-play" type="button" data-video-play>
-            <span class="video-play-icon" aria-hidden="true"></span>
-            <span class="video-play-text">Play the introduction video</span>
-          </button>
-        </div>
-        <p class="note text-centre">Pressing play loads the video from YouTube. Nothing is sent to them before that.</p>
       </div>
     </section>
 
