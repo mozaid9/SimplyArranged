@@ -37,6 +37,36 @@ The one match at a time, double blind and never rematch wording was on about and
 
 Seven of the nine remaining todo blocks are on the two legal pages. Home, about, process and join now carry none.
 
+## 4 August 2026, spacing and the halal way section
+
+### The gap between sections was two rhythm steps, not one
+
+Client flagged the gap above "Doing it the halal way" as looking unnatural. Measured rather than guessed: 160 pixels at a 1440 wide viewport, made of the bottom padding of one section plus the top padding of the next. Every `.section` contributes a full `--sa-section-gap`, so two in a row produce two steps where one was intended.
+
+Fixed in `layout.css` with a single rule:
+
+```css
+.section + .section {
+  padding-block-start: 0;
+}
+```
+
+Spacing against a band, against the header and at the page edges is untouched, so the only thing that changes is the doubling. It applies site wide, which is right, because about, process and join all had the same doubling.
+
+Flat specificity and one owner for section spacing, as `CLAUDE.md` asks. This does not fight the `.section` rule, it corrects it in the one case it gets wrong.
+
+### The four white cards are gone
+
+Client instruction. The paragraph and the four cards under "Doing it the halal way" are both removed. Removing the cards alone was not an option, because the paragraph ends "in practice that means four things" and would have been pointing at nothing.
+
+That leaves the heading on its own, which turns out to work. It now reads as the title of the teal band directly below it, which says "Creating a unique matchmaking experience, while adhering to Islamic principles". A new `.section-intro` modifier pulls the heading down towards the band so it reads as introducing it rather than floating between two things.
+
+The four principles were the clearest statement anywhere on the site of how the service actually works. No member to member contact, same gender calls, supervised meetings, family involved. All four are still true and all four are still in the terms. If any of it goes back, this is the wording to go back to, and it is in git.
+
+### Alignment is now inconsistent across the three main pages
+
+Home and about centre their opening heading. Process does not, because nobody asked for it. Worth settling one way or the other, and it is a one line change either way.
+
 ## 27 July 2026, the video
 
 ### The introduction video is now on the home page

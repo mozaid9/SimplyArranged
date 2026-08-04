@@ -15,6 +15,19 @@
   padding-block: var(--sa-section-gap);
 }
 
+/* Two sections in a row would otherwise contribute their padding twice and
+   leave two whole rhythm steps of dead air between two blocks of text. One
+   step is the intent. Spacing against a band or the page edge is unaffected. */
+.section + .section {
+  padding-block-start: 0;
+}
+
+/* A section holding only a heading that introduces the band directly below it,
+   so it sits nearer the band than the block above. */
+.section-intro {
+  padding-block-end: var(--sa-space-5);
+}
+
 /* Full bleed teal, cream text. */
 .band {
   background-color: var(--sa-teal);
